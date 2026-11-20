@@ -1,0 +1,103 @@
+/* CashFlowy - Level 1 */
+
+body {
+  margin: 0;
+  background: #d6d6d6;
+  color: #000000;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px 16px;
+}
+
+h1 {
+  margin: 0;
+  color: #0051ff;
+}
+
+.subtitle {
+  margin: 0 0 20px 0;
+  color: #4e4d4d;
+}
+
+/* Three boxes on top */
+.cards {
+  display:flex;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.card {
+  flex: 1;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 30px;
+  border: 5px solid #dddddd;
+}
+
+.card p {
+  margin: 0;
+  font-size: 20px;
+  color: #666666;
+}
+
+.card h2 {
+  margin: 10px 0 0 0;
+  font-size: 40px;
+}
+
+.green { color: #15803d; }
+.red   { color: #b91c1c; }
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, select {
+  padding: 10px;
+  font-size: 16px;
+  color: #222222;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  color: #ffffff;
+  background: #2563eb;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* History list */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border: 1px solid #dddddd;
+}
+
+li button {
+  padding: 4px 10px;
+  font-size: 14px;
+  background: #dc2626;
+}

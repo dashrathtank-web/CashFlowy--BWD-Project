@@ -1,3 +1,4 @@
+
 var transactions = [];
 
 var form = document.getElementById("form");
@@ -36,8 +37,7 @@ function showAll() {
 
   document.getElementById("income").textContent = "₹" + income;
   document.getElementById("expense").textContent = "₹" + expense;
-  document.getElementById("balance").textContent =
-    "₹" + (income - expense);
+  document.getElementById("balance").textContent = "₹" + (income - expense);
 }
 
 function deleteEntry() {
@@ -46,19 +46,18 @@ function deleteEntry() {
   showAll();
 }
 
-form.onsubmit = function(event) {
+form.onsubmit = function (event) {
   event.preventDefault();
 
   var description = descriptionInput.value;
   var amount = Number(amountInput.value);
 
   if (description == "" || amount <= 0) {
-    message.textContent = "Please enter valid details.";
+    message.textContent = "Please write a description and an amount more than 0.";
     return;
   }
 
   message.textContent = "";
-
   transactions.push({
     description: description,
     amount: amount,
@@ -67,7 +66,6 @@ form.onsubmit = function(event) {
 
   descriptionInput.value = "";
   amountInput.value = "";
-
   showAll();
 };
 

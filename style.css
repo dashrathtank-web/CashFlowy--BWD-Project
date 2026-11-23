@@ -9,7 +9,7 @@ body {
 .container {
   max-width: 500px;
   margin: 0 auto;
-  padding: 20px 16px;
+  padding: 20px 17px;
 }
 
 h1 {
@@ -50,7 +50,6 @@ h1 {
 .green { color: #15803d; }
 .red   { color: #b91c1c; }
 
-/* Form */
 form {
   display: flex;
   flex-direction: column;

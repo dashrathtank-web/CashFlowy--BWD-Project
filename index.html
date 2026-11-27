@@ -2,81 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CashFlowy.com</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CashFlowy</title>
+  <link rel="stylesheet" href="final.css">
 </head>
 <body>
-
-  <div class="container">
-
+  <main class="container">
     <header class="header">
-      <div>
-        <h1>CashFlowy</h1>
-        <p class="subtitle">Smart Expense Manager</p>
-      </div>
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+        <rect width="34" height="34" rx="8" fill="#1e3a8a"/>
+        <path d="M8 13h13M8 21h18" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="26" cy="13" r="3" fill="#d97706"/>
+      </svg>
+      <div><h1>CashFlowy</h1><p>YOUR MONEY, YOUR CONTROL · <span id="monthName"></span></p></div>
+      <div id="rupeeScene" aria-label="Rotating rupee symbol"></div>
     </header>
 
     <section class="cards">
-
-      <div class="card">
-        <p>Balance</p>
-        <h2 id="balance">₹0</h2>
-      </div>
-
-      <div class="card">
-        <p>Income</p>
-        <h2 id="income" class="green">₹0</h2>
-      </div>
-
-      <div class="card">
-        <p>Expense</p>
-        <h2 id="expense" class="red">₹0</h2>
-      </div>
-
+      <div class="card balance-card"><span>Balance</span><strong id="balance">₹0</strong></div>
+      <div class="card"><span>Income</span><strong id="income" class="income">₹0</strong></div>
+      <div class="card"><span>Expense</span><strong id="expense" class="expense">₹0</strong></div>
     </section>
 
-    <section class="form-section">
-      <h3>Add new entry</h3>
-
-      <form id="form">
-
-        <label for="description">Description</label>
-        <input
-          type="text"
-          id="description"
-          placeholder="e.g. Chai, Shopping"
-          maxlength="80">
-
-        <label for="amount">Amount</label>
-        <input
-          type="number"
-          id="amount"
-          placeholder="Enter amount"
-          min="0.01"
-          step="0.01">
-
-        <label for="type">Transaction Type</label>
-        <select id="type">
-          <option value="expense">Expense</option>
-          <option value="income">Income</option>
-        </select>
-
-        <button type="submit">Add Transaction</button>
-
-      </form>
-
-      <p id="message" class="red" aria-live="polite"></p>
+    <section class="main">
+      <div class="box form-box">
+        <h2>Add entry</h2>
+        <form id="form">
+          <div class="type-buttons">
+            <button type="button" id="expenseButton" class="active">Expense</button>
+            <button type="button" id="incomeButton">Income</button>
+          </div>
+          <label for="amount">Amount</label>
+          <input id="amount" type="number" min="0" step="0.01" placeholder="0" required>
+          <label for="description">Description</label>
+          <input id="description" type="text" placeholder="e.g. Coffee, Bus, Salary" maxlength="80">
+          <label for="date">Date</label>
+          <input id="date" type="date" required>
+          <p id="message" class="message"></p>
+          <button class="add-button" type="submit" id="addButton">Add expense</button>
+        </form>
+      </div>
+      <div class="box history-box">
+        <h2>History</h2>
+        <ul id="list"></ul>
+        <p id="empty" class="empty">No entries yet. Add your first entry from the left.</p>
+      </div>
     </section>
-
-    <section class="history-section">
-      <h3>Transaction History</h3>
-      <ul id="list"></ul>
-    </section>
-
-  </div>
-
-  <script src="script.js"></script>
-
+  </main>
+  <div class="toast" id="toast"><span id="toastText"></span><button type="button" id="undoButton">Undo</button></div>
+  <script src="final.js"></script>
 </body>
 </html>

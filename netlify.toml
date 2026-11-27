@@ -1,0 +1,4 @@
+# CashFlowy is a static site: no build step, files are served from the repository root.
+[build]
+  publish = "."
+  command = ""
